@@ -69,7 +69,7 @@
 		<!-- .tar.gz file -->
 		<tar tarfile="${name}-${version}.tar" basedir="${dist.root}"/>
 		<gzip src="${name}-${version}.tar"
-		      zipfile="${dist.root}/${name}-${version}.tar.gz"/>
+		      zipfile="${dist.root}/${name}-${version}.tgz"/>
 		<delete file="${name}-${version}.tar"/>
 
 		<!-- .zip file -->
