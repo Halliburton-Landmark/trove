@@ -31,6 +31,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Arrays;
 
+import static gnu.trove.TestUtils.testDeserialization;
+
 
 public class TArrayListTest extends TestCase {
 
@@ -130,17 +132,7 @@ public class TArrayListTest extends TestCase {
 
 
     public void testSerialization() throws Exception {
-        ByteArrayOutputStream bout = new ByteArrayOutputStream();
-        ObjectOutputStream oout = new ObjectOutputStream(bout);
-        oout.writeObject(list);
-        oout.close();
-
-        ObjectInputStream oin = new ObjectInputStream(
-                new ByteArrayInputStream(bout.toByteArray()));
-
-        TIntArrayList new_list = (TIntArrayList) oin.readObject();
-
-        assertEquals(list, new_list);
+        testDeserialization(list);
     }
 
 
