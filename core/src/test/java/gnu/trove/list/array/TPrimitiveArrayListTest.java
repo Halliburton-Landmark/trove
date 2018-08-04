@@ -1,7 +1,6 @@
 package gnu.trove.list.array;
 
 import gnu.trove.TIntCollection;
-import gnu.trove.function.TIntFunction;
 import gnu.trove.impl.Constants;
 import gnu.trove.iterator.TIntIterator;
 import gnu.trove.list.TIntList;
@@ -111,16 +110,14 @@ public class TPrimitiveArrayListTest {
         for ( int i = 0; i < 5; i++ ) {
             int result = a.get( i );
             int expected = i + 1;
-            assertTrue( "element " + result + " should be " + expected,
-                    result == expected );
+            assertEquals("element " + result + " should be " + expected, result, expected);
         }
 
         assertEquals( testVal, a.get( 5 ) );
 
         for ( int i = 6; i < a.size(); i++ ) {
             int result = a.get( i );
-            assertTrue( "element " + result + " should be " + i,
-                    result == i );
+            assertEquals("element " + result + " should be " + i, result, i);
         }
     }
 
@@ -246,8 +243,7 @@ public class TPrimitiveArrayListTest {
         for ( int i = 0; i < 5; i++ ) {
             int result = a.get( i );
             int expected = i + 1;
-            assertTrue( "element " + result + " should be " + expected,
-                    result == expected );
+            assertEquals("element " + result + " should be " + expected, result, expected);
         }
 
         assertEquals( testval, a.get( 5 ) );
@@ -255,8 +251,7 @@ public class TPrimitiveArrayListTest {
         for ( int i = 6; i < a.size(); i++ ) {
             int result = a.get( i );
             int expected = i + 1;
-            assertTrue( "element " + result + " should be " + expected,
-                    result == expected );
+            assertEquals("element " + result + " should be " + expected, result, expected);
         }
 
         try {
@@ -285,8 +280,7 @@ public class TPrimitiveArrayListTest {
         for ( int i = 0; i < 5; i++ ) {
             int result = a.get( i );
             int expected = i + 1;
-            assertTrue( "element " + result + " should be " + expected,
-                    result == expected );
+            assertEquals("element " + result + " should be " + expected, result, expected);
         }
 
         assertEquals( testval, a.get( 5 ) );
@@ -294,8 +288,7 @@ public class TPrimitiveArrayListTest {
         for ( int i = 6; i < a.size(); i++ ) {
             int result = a.get( i );
             int expected = i + 1;
-            assertTrue( "element " + result + " should be " + expected,
-                    result == expected );
+            assertEquals("element " + result + " should be " + expected, result, expected);
         }
 
         try {
@@ -324,8 +317,7 @@ public class TPrimitiveArrayListTest {
         for ( int i = 0; i < 5; i++ ) {
             int result = a.get( i );
             int expected = i + 1;
-            assertTrue( "element " + result + " should be " + expected,
-                    result == expected );
+            assertEquals("element " + result + " should be " + expected, result, expected);
         }
 
         assertEquals( testval, a.get( 5 ) );
@@ -333,8 +325,7 @@ public class TPrimitiveArrayListTest {
         for ( int i = 6; i < a.size(); i++ ) {
             int result = a.get( i );
             int expected = i + 1;
-            assertTrue( "element " + result + " should be " + expected,
-                    result == expected );
+            assertEquals("element " + result + " should be " + expected, result, expected);
         }
 
         try {
@@ -361,11 +352,11 @@ public class TPrimitiveArrayListTest {
         assertTrue( a.remove( 5 ) );
         for ( int i = 0; i < 4; i++ ) {
             int expected = i + 1;
-            assertTrue( "index " + i + " expected " + expected, a.get( i ) == expected );
+            assertEquals("index " + i + " expected " + expected, a.get(i), expected);
         }
         for ( int i = 4; i < a.size(); i++ ) {
             int expected = i + 2;
-            assertTrue( "index " + i + " expected " + expected, a.get( i ) == expected );
+            assertEquals("index " + i + " expected " + expected, a.get(i), expected);
         }
 
         // Can't remove again from THIS list because it's not present.
@@ -374,11 +365,11 @@ public class TPrimitiveArrayListTest {
         assertEquals( 6, a.removeAt( 4 ) );
         for ( int i = 0; i < 4; i++ ) {
             int expected = i + 1;
-            assertTrue( "index " + i + " expected " + expected, a.get( i ) == expected );
+            assertEquals("index " + i + " expected " + expected, a.get(i), expected);
         }
         for ( int i = 4; i < a.size(); i++ ) {
             int expected = i + 3;
-            assertTrue( "index " + i + " expected " + expected, a.get( i ) == expected );
+            assertEquals("index " + i + " expected " + expected, a.get(i), expected);
         }
         a.insert( 4, 6 );
 
@@ -394,12 +385,11 @@ public class TPrimitiveArrayListTest {
         assertTrue( a.add( 5 ) );
         for ( int i = 0; i < 5; i++ ) {
             int expected = i + 1;
-            assertTrue( "index " + i + " expected " + expected, a.get( i ) == expected );
+            assertEquals("index " + i + " expected " + expected, a.get(i), expected);
         }
         for ( int i = 5; i < a.size() - 1; i++ ) {
             int expected = i + 1;
-            assertTrue( "index " + i + " expected " + expected + ", list: " + a,
-                    a.get( i ) == expected );
+            assertEquals("index " + i + " expected " + expected + ", list: " + a, a.get(i), expected);
         }
         assertEquals( 5, a.get( a.size() - 1 ) );
 
@@ -407,11 +397,11 @@ public class TPrimitiveArrayListTest {
         assertEquals( element_count, a.size() );
         for ( int i = 0; i < 4; i++ ) {
             int expected = i + 1;
-            assertTrue( "index " + i + " expected " + expected, a.get( i ) == expected );
+            assertEquals("index " + i + " expected " + expected, a.get(i), expected);
         }
         for ( int i = 4; i < a.size() - 1; i++ ) {
             int expected = i + 2;
-            assertTrue( "index " + i + " expected " + expected, a.get( i ) == expected );
+            assertEquals("index " + i + " expected " + expected, a.get(i), expected);
         }
         assertEquals( 5, a.get( a.size() - 1 ) );
     }
@@ -436,7 +426,7 @@ public class TPrimitiveArrayListTest {
 
         for ( int i = 0; i < a.size(); i++ ) {
             int expected = i * 2 + 1;
-            assertTrue( "index " + i + " expected " + expected, a.get( i ) == expected );
+            assertEquals("index " + i + " expected " + expected, a.get(i), expected);
         }
     }
 
@@ -455,12 +445,12 @@ public class TPrimitiveArrayListTest {
 
         for ( int i = 0; i < 5; i++ ) {
             int expected = i + 1;
-            assertTrue( "index " + i + " expected " + expected, a.get( i ) == expected );
+            assertEquals("index " + i + " expected " + expected, a.get(i), expected);
         }
         for ( int i = 5; i < a.size(); i++ ) {
             int expected = i + 11;
-            assertTrue( "index " + i + " expected " + expected +
-                        " but got " + a.get( i ), a.get( i ) == expected );
+            assertEquals("index " + i + " expected " + expected +
+                    " but got " + a.get(i), a.get(i), expected);
         }
 
         try {
@@ -483,7 +473,7 @@ public class TPrimitiveArrayListTest {
     @Test
     public void testContainsAllCollection() {
         int element_count = 20;
-        SortedSet<Integer> set = new TreeSet<Integer>();
+        SortedSet<Integer> set = new TreeSet<>();
         for ( int i = 0; i < element_count; i++ ) {
             set.add(i);
         }
@@ -506,7 +496,7 @@ public class TPrimitiveArrayListTest {
         list.add( 5 );
 
         // Test when not all objects are Integers.. 
-        Set<Number> obj_set = new HashSet<Number>();
+        Set<Number> obj_set = new HashSet<>();
         for ( int i = 0; i < element_count; i++ ) {
             if ( i != 5 ) {
                 obj_set.add(i);
@@ -577,7 +567,7 @@ public class TPrimitiveArrayListTest {
     @Test
     public void testAddAllCollection() {
         int element_count = 20;
-        SortedSet<Integer> set = new TreeSet<Integer>();
+        SortedSet<Integer> set = new TreeSet<>();
         for ( int i = 0; i < element_count; i++ ) {
             set.add(i);
         }
@@ -662,7 +652,7 @@ public class TPrimitiveArrayListTest {
     @Test
     public void testRetainAllCollection() {
         int element_count = 20;
-        SortedSet<Integer> set = new TreeSet<Integer>();
+        SortedSet<Integer> set = new TreeSet<>();
         for ( int i = 0; i < element_count; i++ ) {
             set.add(i);
         }
@@ -690,7 +680,7 @@ public class TPrimitiveArrayListTest {
         assertEquals( "expected: " + expected + ", was: " + list.size() + ", list: " + list ,
                 expected, list.size() );
         for ( int i = 0; i < list.size(); i++ ) {
-            expected = ( int ) Math.floor( i / 4 ) + i + 1;
+            expected = i / 4 + i + 1;
             assertEquals( "expected: " + expected + ", was: " + list.get( i ) + ", list: " + list,
                 expected , list.get( i ) );
         }
@@ -728,7 +718,7 @@ public class TPrimitiveArrayListTest {
         int expected = element_count - 4;
         assertEquals( expected, list.size() );
         for ( int i = 0; i < list.size(); i++ ) {
-            expected = ( int ) Math.floor( i / 4 ) + i + 1;
+            expected = i / 4 + i + 1;
             assertEquals( "expected: " + expected + ", was: " + list.get( i ) + ", list: " + list,
                 expected , list.get( i ) );
         }
@@ -742,7 +732,7 @@ public class TPrimitiveArrayListTest {
         for ( int i = elementCount - 1; i >= 0; i-- ) {
             ints[i] = elementCount - i - 1;
         }
-        List<Integer> intsList = stream(ints).mapToObj(Integer::valueOf).collect(toList());
+        List<Integer> intsList = stream(ints).boxed().collect(toList());
         shuffle(intsList, rnd);
         ints = intsList.stream().mapToInt(Integer::intValue).toArray();
         int intsCopy[] = ints.clone();
@@ -768,7 +758,7 @@ public class TPrimitiveArrayListTest {
             }
             ints[i] = j;
         }
-        intsList = stream(ints).mapToObj(Integer::valueOf).collect(toList());
+        intsList = stream(ints).boxed().collect(toList());
         shuffle(intsList, rnd);
         ints = intsList.stream().mapToInt(Integer::intValue).toArray();
         intsCopy = ints.clone();
@@ -777,7 +767,7 @@ public class TPrimitiveArrayListTest {
         int expected = elementCount - 4;
         assertEquals( expected, list.size() );
         for ( int i = 0; i < list.size(); i++ ) {
-            expected = ( int ) Math.floor( i / 4 ) + i + 1;
+            expected = i / 4 + i + 1;
             assertEquals( "expected: " + expected + ", was: " + list.get( i ) + ", list: " + list,
                 expected , list.get( i ) );
             assertThat("Ints to retain should remain in the same order.", ints[i], is(equalTo(intsCopy[i])));
@@ -787,7 +777,7 @@ public class TPrimitiveArrayListTest {
     @Test
     public void testRemoveAllCollection() {
         int element_count = 20;
-        SortedSet<Integer> set = new TreeSet<Integer>();
+        SortedSet<Integer> set = new TreeSet<>();
         for ( int i = 0; i < element_count; i++ ) {
             set.add(i);
         }
@@ -1056,8 +1046,7 @@ public class TPrimitiveArrayListTest {
         array_list.trimToSize();
 
         int trimmed_length = array_list._data.length;
-        assertTrue( "not trimmed: " + trimmed_length + " should be == " + element_count,
-                trimmed_length == element_count );
+        assertEquals("not trimmed: " + trimmed_length + " should be == " + element_count, trimmed_length, element_count);
     }
 
     @Test
@@ -1290,8 +1279,7 @@ public class TPrimitiveArrayListTest {
 
         for ( int i = 0; i < element_count; i++ ) {
             int expected = a.getQuick( i );
-            assertTrue( "index " + i + " is " + expected,
-                    a.getNoEntryValue() == expected );
+            assertEquals("index " + i + " is " + expected, a.getNoEntryValue(), expected);
         }
     }
 
@@ -1303,11 +1291,7 @@ public class TPrimitiveArrayListTest {
             a.add( i );
         }
 
-        TIntList grepped = a.grep( new TIntProcedure() {
-            public boolean execute( int value ) {
-                return value > 10;
-            }
-        } );
+        TIntList grepped = a.grep(value -> value > 10);
 
         for ( int i = 0; i < grepped.size(); i++ ) {
             int expected = i + 11;
@@ -1323,11 +1307,7 @@ public class TPrimitiveArrayListTest {
             a.add( i );
         }
 
-        TIntList grepped = a.inverseGrep( new TIntProcedure() {
-            public boolean execute( int value ) {
-                return value <= 10;
-            }
-        } );
+        TIntList grepped = a.inverseGrep(value -> value <= 10);
 
         for ( int i = 0; i < grepped.size(); i++ ) {
             int expected = i + 11;
@@ -1493,11 +1473,7 @@ public class TPrimitiveArrayListTest {
             a.add( i );
         }
 
-        a.transformValues( new TIntFunction() {
-            public int execute( int value ) {
-                return value * value;
-            }
-        } );
+        a.transformValues(value -> value * value);
 
         for ( int i = 0; i < a.size(); i++ ) {
             int result = a.get( i );
@@ -1589,14 +1565,14 @@ public class TPrimitiveArrayListTest {
             collection.add( i );
         }
 
-        assertFalse( list.equals( collection ) );
+        assertNotEquals(list, collection);
 
         collection.add( 1138 );
-        assertFalse( list.equals( collection ) );
+        assertNotEquals(list, collection);
 
         TIntList other = new TIntArrayList( list );
         other.replace( 10, 1138 );
-        assertFalse( list.equals( other ) );
+        assertNotEquals(list, other);
     }
 
     @Test
