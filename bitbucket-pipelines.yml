@@ -1,4 +1,4 @@
-image: openjava:10
+image: openjdk:10
 
 pipelines:
   default:
