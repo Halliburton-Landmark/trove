@@ -1,4 +1,4 @@
-image: java:8
+image: openjava:10
 
 pipelines:
   default:

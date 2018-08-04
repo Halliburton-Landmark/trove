@@ -48,6 +48,11 @@ subprojects {
         generateTemplates project(":generator")
     }
 
+    testClasses {
+        sourceCompatibility = 1.10
+        targetCompatibility = 1.10
+    }
+
     jar {
         manifest {
             attributes 'Implementation-Title': 'Trove',
